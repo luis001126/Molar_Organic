@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import StringVar
 from tkinter import PhotoImage
+from tkinter import messagebox as mBox
 C = 12
 H = 1
 O = 16
@@ -20,6 +21,17 @@ def Funcion():
         entrada5.set('0')
     else:
         print('CHONS')
+
+def Mensaje():
+    carbono=entrada1.get()
+    higrogeno=entrada2.get()
+    oxigeno=entrada3.get()
+    nitrogeno=entrada4.get()
+    azufre=entrada5.get()
+    nombre_result=f'C{carbono} H{higrogeno} O{oxigeno} N{nitrogeno} S{azufre}'
+    resultado:float=(carbono*C)+(higrogeno*H)+(oxigeno*O)+(nitrogeno*N)+(azufre*S)
+    mBox.showinfo('Respuesta',f'La masa molar del [ {nombre_result} ] es {resultado} kg/kmol')
+
 
 def Salir():
     root.destroy()
@@ -55,42 +67,47 @@ titulo1.place(x=0,y=120)
 etiqueta2 = StringVar()
 etiqueta2 = Label(root,text='Carbono',justify=CENTER)
 etiqueta2.place(x=0,y=150)
-entrada1: StringVar =StringVar()
+entrada1= IntVar()
+entrada1.set('')
 Cabro = Entry(root,textvariable=entrada1,justify=CENTER)
 Cabro.place(x=0,y=175)
 #----------------------------------------
 etiqueta3 = StringVar()
 etiqueta3 = Label(root,text='Hidogeno',justify=CENTER)
 etiqueta3.place(x=0,y=200)
-entrada2 =StringVar()
+entrada2 =IntVar()
+entrada2.set('')
 Hidro = Entry(root,textvariable=entrada2,justify=CENTER)
 Hidro.place(x=0,y=225)
 #---------------------------------------
 etiqueta4 = StringVar()
 etiqueta4 = Label(root,text='Oxigeno',justify=CENTER)
 etiqueta4.place(x=200,y=150)
-entrada3 =StringVar()
+entrada3 =IntVar()
+entrada3.set('')
 Oxi = Entry(root,textvariable=entrada3,justify=CENTER)
 Oxi.place(x=200,y=175)
 #--------------------------------------
 etiqueta5 = StringVar()
 etiqueta5 = Label(root,text='Nitrogeno',justify=CENTER)
 etiqueta5.place(x=200,y=200)
-entrada4 =StringVar()
+entrada4 =IntVar()
+entrada4.set('')
 Nitro = Entry(root,textvariable=entrada4,justify=CENTER)
 Nitro.place(x=200,y=225)
 #-------------------------------------
 etiqueta6 = StringVar()
 etiqueta6 = Label(root,text='Azufre',justify=CENTER)
 etiqueta6.place(x=0,y=250)
-entrada5 =StringVar()
+entrada5 =IntVar()
+entrada5.set('')
 Azuf = Entry(root,textvariable=entrada5,justify=CENTER)
 Azuf.place(x=0,y=275)
 #-------------------------------------
 boton1 = Button(root,text='SALIR',command=Salir)
 boton1.place(x=350,y=360)
 #------------------------------------
-boton2 = Button(root,text='Calcular')
+boton2 = Button(root,text='Calcular',command=Mensaje)
 boton2.place(x=250,y=360)
 
 root.mainloop()
