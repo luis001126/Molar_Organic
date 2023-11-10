@@ -38,6 +38,15 @@ def Mensaje():
 def Salir():
     root.destroy()
     root.quit()
+def Referecias():
+    mBox.showinfo('Referencias','Este programa fue diseñado por Luis'
+                                'Alexis Rojas Rondan, cualquir duda puede escribir al '
+                                'correo siguinte: luisalexisrojasrondan@gmail.com')
+
+def Documento():
+    archivo=open('funcionamiento.txt',mode='r')
+    print(archivo.read())
+
 
 root = Tk()
 root.wm_title('Molar_Organic')
@@ -51,11 +60,9 @@ barra_menu = Menu(root)
 root.config(menu=barra_menu)
 
 funcionamiento = Menu(barra_menu,tearoff=0)
-funcionamiento.add_command(label = 'Funcionamiento')
+funcionamiento.add_command(label = 'Funcionamiento',command=Documento)
 funcionamiento.add_separator()
-funcionamiento.add_command(label='Ayuda')
-funcionamiento.add_separator()
-funcionamiento.add_command(label='Referencias')
+funcionamiento.add_command(label='Referencias',command=Referecias)
 barra_menu.add_cascade(label = 'Acerca de: ',menu=funcionamiento)
 
 #------------------------------------------

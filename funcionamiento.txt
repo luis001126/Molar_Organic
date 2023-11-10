@@ -1,0 +1,15 @@
++---------------+
+|Funcionamiento |
++---------------+
+1-Iniciar el progrma 
+2-Seleccionar las sustancias quimicas que componen la sustancia quimica
+3-Entrar los valores de las cantidades de C,H,O,N y S
+4-Pinchar el boton calcular 
+5-Leer el resultado en pantalla donde se indica la respuesta
+6-Presionar el boton salir para cerrar la ventana
++-----------------------------------------------------------------------+
+|  Este programa se encuentra disponible en GitHub.......               |
+|  contacto:luisalexisrojasrondan@gmail.com                             |
+|  +53 59484201                                                         |
+|                                                                       |
++-----------------------------------------------------------------------+
